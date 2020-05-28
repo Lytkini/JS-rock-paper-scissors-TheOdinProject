@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function computerPlay() {
+            let randomNumber = Math.floor(Math.random() * 3)
+
+            if (randomNumber === 0) {
+                return 'rock'
+            }
+            if (randomNumber === 1) {
+                return 'paper'
+            }
+            if (randomNumber === 2) {
+                return 'scissors'
+            }
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            //Ensure that playerSelection parameter is a string
+            let playerSelectionToString = String(playerSelection)
+
+            //Make playerSelection case insensitive 
+            playerSelectionToString = playerSelectionToString.toLowerCase()
+
+            if (playerSelectionToString === computerSelection) {
+                return 'It`s a draw'
+            }
+
+            if (playerSelectionToString === 'rock' && computerSelection === 'scissors' || playerSelectionToString === 'paper' && computerSelection === 'rock' || playerSelectionToString === 'scissors' && computerSelection === 'paper') {
+                return 'User wins'
+            } else {
+                return 'Computer wins'
+            }
+
+        }
+
+        const playerSelection = 'PaPeR'
+        const computerSelection = computerPlay()
+        console.log(playRound(playerSelection, computerSelection))
+
+        function game() {
+            let userScore = 0
+            let compScore = 0
+            let roundResult = ''
+            let userInput = ''
+            let compInput = ''
+            
+            for (i = 0; i < 5; i++) {
+                userInput = prompt("Input your option")
+                compInput = computerPlay()
+                roundResult = playRound(userInput, compInput)
+
+                console.log(roundResult)
+
+                if (roundResult === 'User wins') {
+                    userScore++
+                } else if (roundResult === 'Computer wins') {
+                    compScore++
+                }
+            }
+
+            if (userScore == compScore) {
+                return 'It`s a tie'
+            }
+
+            if (userScore > compScore) {
+                return 'Overall winner is user'
+            } else {
+                return 'Overall winner is computer'
+            }
+        }
+
+        console.log(game())
+
+    </script>
+</body>
+
+</html>
