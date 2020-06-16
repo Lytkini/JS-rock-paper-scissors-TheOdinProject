@@ -1,1 +1,1 @@
-A solution for the [rock-paper-scissors project](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors).
+Updated version of the [rock-paper-scissors project](https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation#practice).
